@@ -1,0 +1,19 @@
+<h1>{{title }}</h1>
+<input type="text" placeholder="What needs to be done?" #task (keyup.enter)="addtask(task.value)" />
+<br>
+<br>
+<button (click)="addtask(task.value)">Add Task</button>
+<br>
+<br>
+<ul *ngFor="let item of list">
+    
+    <input type="checkbox" id="chk" [(ngModel)]="item.state" ng-model="isAgreed" />
+
+    {{item.name}} 
+    <button (click)="remove(item.id)"  ng-disabled="!isAgreed" >Remove</button>
+
+</ul>
+
+
+<br>
+ <span class="todo-count"><strong>{{getLength()}}</strong> item left</span>
