@@ -1,0 +1,79 @@
+<!-- <p>home works!</p>
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">title</th>
+          <th scope="col">description</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of allBlogs">
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.title }}</td>
+          <td>{{ item.description }}</td>
+          <td>
+            <a class="btn btn-primary" [routerLink]="['/blogs/edit', item.id]">Edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row mt-2">
+      <div class="col col-md-4 offset-md-4">
+        <a class="btn btn-primary" routerLink="/blogs/create">Create</a>
+        
+      </div>
+    </div>
+
+  </div> -->
+
+  <!-- <tr *ngFor="let item of allBlogs">
+ 
+    
+  </tr> -->
+
+
+
+  
+  <div class="contain">
+    <h1 class="head">List of Blogs</h1>
+    <!-- <p class="para"> <a class="btn btn-primary" [routerLink]="['/blogs/edit']">Edit</a></p>-->
+    <a class="btn btn-primary" routerLink="/blogs/create">Create</a>
+    
+  <div class="container-fluid1" *ngFor="let item of allBlogs | orderBy: id :false"   >
+    
+    <p>{{ item.title }}</p>
+    <p>{{ item.description }}</p>
+    <p>{{item.category}}</p>
+    
+    
+    <p class="para"><a class="btn btn-primary" [routerLink]="['/blogs/edit', item.id]">Edit</a></p>
+    <p><button type="button" (click)="openDeleteModal(item.id)" class="btn btn-danger">Delete</button></p>
+    <p id="datelatest">Create on:- {{datetoday | date: "short" }}</p>
+   
+    
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to delete the item?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

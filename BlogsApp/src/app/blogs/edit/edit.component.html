@@ -1,0 +1,38 @@
+<!-- <div class="container">
+    <legend>Edit Blog</legend>
+    <form>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Name</label>
+        <input type="text" name="title" [(ngModel)] = "blogForm.title" class="form-control" id="txtName" />
+      </div>
+      <div class="mb-3">
+        <label for="txtPrice" class="form-label">Price</label>
+        <input type="text" name="description" [(ngModel)] = "blogForm.description" class="form-control" id="txtPrice" />
+      </div>
+     
+      <button type="button" (click)="update()" class="btn btn-primary">Update</button>
+    </form>
+  </div> -->
+
+  <div class="container">
+    <form>
+    <div class="container-fluid">
+     <h1>Create Blog</h1>
+     <input type="text" placeholder="Enter the title" name="title" [(ngModel)] = "blogForm.title" class="form-control" id="txtName" >
+     <br>
+     <br>
+     <input type="text" placeholder="Enter the DEscription" name="description" [(ngModel)] = "blogForm.description" class="form-control" id="txtdescription" > 
+     <br>
+     <br>
+     <select name="category" [(ngModel)] = "blogForm.category" class="form-control" id="txtcategory" >
+       <option value="Default">--select category--</option>
+       <option value="New Tech">New_Tech</option>
+       <option value="Old Tech">Old_Tech</option>
+       <option value="TechDB">Tech_DB</option>  
+     </select>  
+     <br>
+     <br>
+     <button type="button" (click)="update()" class="btn btn-primary">Update</button>
+   </div>
+  </form>
+   </div>

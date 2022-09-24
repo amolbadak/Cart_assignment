@@ -1,0 +1,65 @@
+<!-- <div class="container">
+  <legend>Create Item</legend>
+  <form>
+    <div class="mb-3">
+      <label for="txtName" class="form-label">Name</label>
+      <input type="text" name="title" [(ngModel)] = "blogForm.title" class="form-control" id="txtName" />
+    </div>
+    <div class="mb-3">
+      <label for="txtPrice" class="form-label">Description</label>
+      <input type="text" name="description" [(ngModel)] = "blogForm.description" class="form-control" id="txtPrice" />
+    </div>
+   
+    <button type="button" (click)="create()" class="btn btn-primary">Create</button>
+  </form>
+</div> -->
+
+<div class="container">
+  <form #empform="ngForm">
+  <div class="container-fluid" >
+   <h1>Create Blog</h1>
+<i  class="fa fa-sort">
+   <input type="text" required minlength="4" appForbiddenName="bob" #name="ngModel" placeholder="Enter the title" name="title" 
+   required [(ngModel)] = "blogForm.title" 
+   class="form-control"  [class.is-invalid]="name.invalid && name.touched" minlength="4" required id="name"     >
+   
+   <div *ngIf="name.touched">
+    <div *ngIf="name.errors && (name.invalid)">
+        <small class="text-danger" *ngIf="name.errors?.['required']">
+            title required </small>
+        <small class="text-danger" *ngIf="name.errors?.['minlength']">
+            it should have minimin 5 characters</small>
+    </div>
+</div>
+
+   
+   <br>
+   <br>
+   <input type="text" placeholder="Enter the Description" name="description" required
+   [(ngModel)] = "blogForm.description"  
+   class="form-control"  [class.is-invalid]="description.invalid && description.touched" id="txtdescription"  
+   #description="ngModel" ngModel name="description"  > 
+   <div *ngIf="description.touched">
+    <div *ngIf="description.errors && (description.invalid)">
+        <small class="text-danger" *ngIf="description.errors?.['required']">
+            Description required </small>
+    </div>
+</div>
+   
+   <br>
+   <br>
+   <select name="category" [(ngModel)] = "blogForm.category" class="form-control" id="txtcategory" >
+     <option value="Default">--select category--</option>
+     <option value="New Tech">New_Tech</option>
+     <option value="Old Tech">Old_Tech</option>
+     <option value="TechDB">Tech_DB</option>  
+   </select>  
+   
+  </i>
+
+   <br>
+   <br>
+   <button type="button" (click)="create()" class="btn btn-primary">Create</button>
+ </div>
+</form>
+ </div>
