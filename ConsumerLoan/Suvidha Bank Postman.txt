@@ -1,0 +1,61 @@
+Add Customer:-
+
+localhost:8083/customer/cust
+
+{
+   "custname":"Amol",
+   "custadd":"Mumbai",
+   "custemail":"amol.badak@gmail.com",
+   "identity":"12345",
+   "annualincome":"10000",
+   "password":"abcde",
+   "incometaxreturnattached":true
+}
+
+Get Customer by Emailid
+
+localhost:8083/customer/amol.badak@gmail.com
+
+Add Employee
+
+localhost:8083/customer/employee
+{
+    "employeeId":"01",
+    "employeeName":"Amol"
+}
+
+
+Get Employee
+localhost:8083/customer/emp/01
+
+Add Collateral
+localhost:8083/loan/collateral
+{
+    "collateralid":"1001",
+    "colletraltype":"policy"
+}
+
+Get Collateral
+localhost:8083/loan/collaterals
+
+Apply for loan
+localhost:8083/loan/amol.badak@gmail.com
+
+{
+"loantype":"Vehicle",
+"loanamount":"60000",
+"interestrate":"8.0",
+"period":"3.0",
+"isapproved":true
+}
+
+upload collaterals
+localhost:8083/loan/upload/SUVIDHA1_amol.badak@gmail.com/?ids=1001
+
+Get Loan detail by loanid
+localhost:8083/loan/SUVIDHA1_amol.badak@gmail.com
+
+
+
+
+
